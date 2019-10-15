@@ -18,4 +18,4 @@ export const ERROR = 'Error'
 
 export const SPACING_RANGE = 3
 
-export const MAX_DIGITS_DISPLAYED = 9
+export const MAX_DIGITS_DISPLAYED = 8

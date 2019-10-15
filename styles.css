@@ -27,8 +27,7 @@ body {
 }
 
 .calculator {
-  width: 17%;
-  min-width: 300px;
+  width: 300px;
   font-family: 'Fredoka One', cursive;
   border: 1px solid black;
   border-radius: 10px;
