@@ -1,0 +1,146 @@
+:root {
+  --button-color: #5f5f5f;
+  --button-color-active: #515151;
+  --button-border-color: #707070;
+  --button-border-color-active: #5f5f5f;
+  --button-font-color: #343434;
+  --button-font-color-active: #2a2a2a;
+  --operation-color: #8c6f45;
+  --operation-color-active: #80653f;
+  --operation-border-color: #a18153;
+  --operation-border-color-active: #947a52;
+  --operation-font-color: #4d3d25;
+  --operation-font-color-active: #40331f;
+  --display-color: #545f5e;
+  --display-font-color: #1c2e2e;
+  --display-shadow-color: #343434;
+  --calculator-color: #444444;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(137deg, #dddddd, #efc78b);
+}
+
+.calculator {
+  width: 17%;
+  min-width: 300px;
+  font-family: 'Fredoka One', cursive;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px 15px 30px;
+  transform: rotate(4deg);
+  background-color: var(--calculator-color);
+  box-shadow: 10px 10px 2px 0 #c2ac8b;
+}
+
+.display {
+  width: 100%;
+  height: fit-content;
+  margin: 0 0 10px;
+  padding: 5px 20px;
+  text-align: right;
+  font-size: 3rem;
+  color: var(--display-font-color);
+  vertical-align: middle;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 0 var(--display-shadow-color), 0 -3px 0 0 var(--display-shadow-color);
+  box-sizing: border-box;
+  user-select: none;
+  background-color: var(--display-color);
+  overflow: hidden;
+}
+
+.display span {
+  display: block;
+  margin-right: 0;
+  max-width: 100%;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.4%;
+  row-gap: 1%;
+  user-select: none;
+}
+
+.key.operation button {
+  background-color: var(--operation-color);
+}
+.key.comma button {
+  line-height: 100%;  
+}
+.key.clear {
+  grid-column: 1/4;
+}
+.key.clear > .button-wrapper {
+  padding-top: 32%;
+}
+.key.zero {
+  grid-column: 1/3;
+}
+.key.zero > .button-wrapper {
+  padding-top: 48.65%;
+}
+
+.button-wrapper {
+  width: 100%;
+  position: relative;
+  padding-top: 100%;
+}
+
+.button-wrapper > button {
+  width: 100%;
+  position: absolute;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 5px solid var(--button-border-color);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-family: inherit;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.button-wrapper > button:focus {
+  outline: none;
+}
+
+.key button {
+  box-shadow: 2px 2px 2px 0 #343434;
+  background-color: var(--button-color);
+  color: var(--button-font-color);
+  transition: border-bottom 100ms ease, 
+              background-color 100ms ease, 
+              box-shadow 100ms ease,
+              margin-top 100ms ease,
+              color 100ms ease;
+}
+
+.key.operation button {
+  border-bottom: 5px solid var(--operation-border-color);
+  color: var(--operation-font-color);
+}
+
+.key button.active {
+  box-shadow: 1px 1px 1px 0 #343434;
+  border-bottom: 3px solid var(--button-border-color-active);
+  margin-top: 2px;
+  color: var(--button-font-color-active);
+  background-color: var(--button-color-active);
+}
+
+.key.operation button.active {
+  border-bottom: 3px solid var(--operation-border-color-active);
+  background-color: var(--operation-color-active);
+  color: var(--operation-font-color-active);
+}
