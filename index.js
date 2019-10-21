@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     lastKey = key
+    console.log('operands: ', operands)
+    console.log('operators: ', operators)
   }
 
   function handleDigit(digit) {
@@ -192,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     savedOperator = null
     lastKey = null
     display.innerText = '0'
+    activeOperatorEl && activeOperatorEl.classList.remove('active')
   }
 
   function round(number, precision) {
